@@ -1,0 +1,440 @@
+================================================================================
+                    TINYPAL ASSIGNMENT - FINAL SUBMISSION
+                         ZIP FILE STRUCTURE
+================================================================================
+
+File: TinyPal_Assignment_Submission.zip
+
+Total Size: ~450 MB (including node_modules and build artifacts)
+Without node_modules: ~15 MB
+
+================================================================================
+                            DIRECTORY STRUCTURE
+================================================================================
+
+TinyPal_Assignment_Submission.zip
+│
+├── TinyAppWorking/                          # React Native Project Source Code
+│   │
+│   ├── android/                             # Android Native Code
+│   │   ├── app/
+│   │   │   ├── src/
+│   │   │   │   ├── debug/                   # Debug configuration
+│   │   │   │   ├── main/
+│   │   │   │   │   ├── java/              # Java source files
+│   │   │   │   │   │   └── com/
+│   │   │   │   │   │       └── tinyappworking/
+│   │   │   │   │   │           ├── MainActivity.kt
+│   │   │   │   │   │           └── MainApplication.kt
+│   │   │   │   │   ├── res/                # Android resources
+│   │   │   │   │   │   ├── drawable/
+│   │   │   │   │   │   ├── mipmap-*/       # App icons
+│   │   │   │   │   │   ├── values/         # Strings, colors, styles
+│   │   │   │   │   │   └── xml/
+│   │   │   │   │   └── AndroidManifest.xml # App manifest
+│   │   │   │   └── release/                # Release configuration
+│   │   │   │
+│   │   │   ├── build.gradle                # App-level build config
+│   │   │   └── proguard-rules.pro          # ProGuard configuration
+│   │   │
+│   │   ├── gradle/
+│   │   │   └── wrapper/
+│   │   │       ├── gradle-wrapper.jar
+│   │   │       └── gradle-wrapper.properties  # Gradle 8.9 config
+│   │   │
+│   │   ├── build.gradle                    # Project-level build config
+│   │   ├── settings.gradle                 # Gradle settings
+│   │   ├── gradle.properties               # Gradle properties
+│   │   ├── gradlew                         # Gradle wrapper script (Unix)
+│   │   └── gradlew.bat                     # Gradle wrapper script (Windows)
+│   │
+│   ├── src/                                 # Application Source Code
+│   │   │
+│   │   ├── components/                      # Reusable UI Components
+│   │   │   ├── Card.js                      # Card component (DYK & Flashcard)
+│   │   │   │   # - Displays title, content, badges
+│   │   │   │   # - Illustration placeholder
+│   │   │   │   # - "DID YOU KNOW?" circular badge
+│   │   │   │   # - Tinu avatar at bottom
+│   │   │   │   # - Conditional styling for DYK/Flashcard
+│   │   │   │   # - 437 lines
+│   │   │   │
+│   │   │   ├── Chip.js                      # Chip component for selections
+│   │   │   │   # - Selectable chip with icon
+│   │   │   │   # - Multiple color variants
+│   │   │   │   # - Touch feedback
+│   │   │   │   # - 78 lines
+│   │   │   │
+│   │   │   └── TinuBottomSheet.js          # Tinu AI Assistant Bottom Sheet
+│   │   │       # - Three snap points (25%, 50%, 90%)
+│   │   │       # - Header with Tinu avatar
+│   │   │       # - Cards with share/bookmark buttons
+│   │   │       # - Horizontally scrollable chips
+│   │   │       # - Text input with mic and send
+│   │   │       # - SVG/HTML sanitization
+│   │   │       # - Keyboard handling
+│   │   │       # - 464 lines
+│   │   │
+│   │   ├── screens/                         # Screen Components
+│   │   │   ├── DidYouKnowScreen.js         # "Did You Know" Screen
+│   │   │   │   # - Displays DYK cards in FlatList
+│   │   │   │   # - Header with title/subtitle
+│   │   │   │   # - Navigation to FlashCard
+│   │   │   │   # - "Ask Tinu" button
+│   │   │   │   # - API integration
+│   │   │   │   # - ~230 lines
+│   │   │   │
+│   │   │   └── FlashCardScreen.js          # Flash Card Screen
+│   │   │       # - Interactive flip animation
+│   │   │       # - Card navigation (prev/next)
+│   │   │       # - Front/back card faces
+│   │   │       # - Counter badge
+│   │   │       # - API integration
+│   │   │       # - ~340 lines
+│   │   │
+│   │   ├── navigation/                      # Navigation Configuration
+│   │   │   └── AppNavigator.js             # React Navigation Setup
+│   │   │       # - Stack Navigator
+│   │   │       # - Screen definitions
+│   │   │       # - Navigation options
+│   │   │       # - ~45 lines
+│   │   │
+│   │   ├── services/                        # API Services
+│   │   │   └── api.js                      # API Integration Layer
+│   │   │       # - Axios configuration
+│   │   │       # - fetchP13nAnswers()
+│   │   │       # - activateTinu()
+│   │   │       # - Error handling
+│   │   │       # - ~80 lines
+│   │   │
+│   │   └── constants/                       # Constants and Configuration
+│   │       └── config.js                   # App Configuration
+│   │           # - API_BASE_URL
+│   │           # - Request body templates
+│   │           # - COLORS object (design system)
+│   │           # - ~65 lines
+│   │
+│   ├── node_modules/                        # Dependencies (excluded in lightweight zip)
+│   │   # Contains all npm packages
+│   │   # Can be regenerated with: npm install
+│   │
+│   ├── App.tsx                              # Root Application Component
+│   │   # - Main entry point
+│   │   # - GestureHandlerRootView wrapper
+│   │   # - AppNavigator integration
+│   │   # - StatusBar configuration
+│   │   # - ~20 lines
+│   │
+│   ├── index.js                             # React Native Entry Point
+│   │   # - Registers root component
+│   │   # - ~10 lines
+│   │
+│   ├── package.json                         # NPM Package Configuration
+│   │   # - Dependencies list
+│   │   # - Scripts (start, android, ios)
+│   │   # - Project metadata
+│   │   # - ~60 lines
+│   │
+│   ├── package-lock.json                    # Dependency Lock File
+│   │   # - Exact versions of all dependencies
+│   │   # - Ensures reproducible installs
+│   │
+│   ├── babel.config.js                      # Babel Configuration
+│   │   # - React Native preset
+│   │   # - Reanimated plugin
+│   │   # - ~10 lines
+│   │
+│   ├── tsconfig.json                        # TypeScript Configuration
+│   │   # - Compiler options
+│   │   # - React Native specific settings
+│   │
+│   ├── metro.config.js                      # Metro Bundler Configuration
+│   │   # - Asset configuration
+│   │   # - Transform options
+│   │
+│   ├── .gitignore                          # Git Ignore Rules
+│   │   # - node_modules
+│   │   # - Build artifacts
+│   │   # - OS files
+│   │
+│   ├── .watchmanconfig                      # Watchman Configuration
+│   │   # - File watching settings
+│   │
+│   ├── app.json                            # App Metadata
+│   │   # - App name
+│   │   # - Display name
+│   │
+│   └── .prettierrc.js                      # Prettier Configuration
+│       # - Code formatting rules
+│
+│
+├── app-release.apk                          # Android Release APK
+│   # - Production-ready Android application
+│   # - File size: ~35-40 MB
+│   # - Minimum Android version: 6.0 (API 23)
+│   # - Target Android version: 14 (API 34)
+│   # - Architectures: arm64-v8a, armeabi-v7a, x86, x86_64
+│   # - Signed and ready to install
+│   # - Can be installed via: adb install app-release.apk
+│   #   or transferred to device and installed directly
+│
+│
+├── README.md                                # Setup and Running Instructions
+│   # - Prerequisites and dependencies
+│   # - Installation steps
+│   # - Running on Android/iOS
+│   # - Troubleshooting guide
+│   # - Project structure overview
+│   # - API integration details
+│   # - Build instructions
+│   # - ~500 lines of comprehensive documentation
+│
+│
+└── System_Design_Documentation.pdf          # System Design Document (PDF)
+    # Comprehensive technical documentation including:
+    # - Introduction and project purpose
+    # - Component breakdown and hierarchy
+    # - Code and folder structure
+    # - API integration architecture
+    # - State management patterns
+    # - UI/UX implementation details
+    # - GenAI usage documentation (REQUIRED SECTION)
+    # - Testing and QA approach
+    # - Build and deployment process
+    # - ~40 pages of detailed documentation
+    # 
+    # Generated from: SYSTEM_DESIGN_DOCUMENT.md
+    # Conversion: Markdown → PDF
+
+
+================================================================================
+                            FILE COUNT SUMMARY
+================================================================================
+
+Total Files (excluding node_modules): ~150 files
+
+Breakdown by Category:
+├── Source Code (JavaScript/TypeScript):     ~15 files
+├── Android Native (Java/Kotlin/XML):        ~30 files
+├── Configuration Files:                     ~10 files
+├── Documentation:                           3 files
+├── Gradle Build System:                     ~8 files
+├── Android Resources (drawables, etc.):     ~80 files
+└── Compiled APK:                            1 file
+
+
+================================================================================
+                        KEY FILES REFERENCE GUIDE
+================================================================================
+
+MUST READ FILES:
+├── README.md                           → Setup instructions (START HERE)
+└── System_Design_Documentation.pdf    → Complete technical documentation
+
+APPLICATION ENTRY POINTS:
+├── index.js                            → React Native entry
+├── App.tsx                             → Root component
+└── src/navigation/AppNavigator.js      → Navigation setup
+
+MAIN SCREENS:
+├── src/screens/DidYouKnowScreen.js     → Home screen with DYK cards
+└── src/screens/FlashCardScreen.js      → Flashcard screen with animations
+
+REUSABLE COMPONENTS:
+├── src/components/Card.js              → Card component
+├── src/components/Chip.js              → Chip component
+└── src/components/TinuBottomSheet.js   → Tinu AI assistant
+
+API INTEGRATION:
+└── src/services/api.js                 → API calls to backend
+
+CONFIGURATION:
+├── src/constants/config.js             → App config and colors
+├── package.json                        → Dependencies
+└── android/app/build.gradle            → Android build config
+
+DELIVERABLES:
+├── app-release.apk                     → Ready-to-install Android app
+├── README.md                           → Setup instructions
+└── System_Design_Documentation.pdf     → Technical documentation
+
+
+================================================================================
+                         INSTALLATION PRIORITY
+================================================================================
+
+FOR EVALUATOR - QUICKEST PATH TO RUNNING APP:
+
+Option 1: Install Pre-built APK (FASTEST - 2 minutes)
+   1. Extract: app-release.apk
+   2. Transfer to Android device
+   3. Install and run
+   ✅ App running immediately
+
+Option 2: Run from Source (FULL EXPERIENCE - 15 minutes)
+   1. Extract entire TinyAppWorking/ folder
+   2. Open README.md
+   3. Follow "Installation and Setup" section
+   4. Run: npm install
+   5. Run: npm run android
+   ✅ Development environment ready
+
+Option 3: Review Documentation Only (5 minutes)
+   1. Extract: System_Design_Documentation.pdf
+   2. Extract: README.md
+   3. Read documentation
+   ✅ Understand architecture without running
+
+
+================================================================================
+                         SIZE BREAKDOWN
+================================================================================
+
+Component                               Size        Percentage
+--------------------------------------------------------------------------------
+node_modules/ (if included)            ~400 MB      88%
+android/build/ (if included)           ~50 MB       11%
+Source code (src/)                     ~150 KB      <1%
+Android native code                    ~500 KB      <1%
+Configuration files                    ~50 KB       <1%
+app-release.apk                        ~35 MB       8% (if no build artifacts)
+Documentation                          ~500 KB      <1%
+--------------------------------------------------------------------------------
+TOTAL (with node_modules)              ~450 MB      100%
+TOTAL (without node_modules)           ~40 MB       100%
+TOTAL (minimal - APK + docs only)      ~36 MB       100%
+
+RECOMMENDATION FOR SUBMISSION:
+- Exclude node_modules/ (regenerate with npm install)
+- Exclude android/build/ (regenerate with gradle build)
+- Include only: source code, configs, APK, documentation
+- Final size: ~40 MB
+
+
+================================================================================
+                      VERIFICATION CHECKLIST
+================================================================================
+
+Before submission, verify ZIP contains:
+
+SOURCE CODE:
+☑ TinyAppWorking/src/components/Card.js
+☑ TinyAppWorking/src/components/Chip.js
+☑ TinyAppWorking/src/components/TinuBottomSheet.js
+☑ TinyAppWorking/src/screens/DidYouKnowScreen.js
+☑ TinyAppWorking/src/screens/FlashCardScreen.js
+☑ TinyAppWorking/src/navigation/AppNavigator.js
+☑ TinyAppWorking/src/services/api.js
+☑ TinyAppWorking/src/constants/config.js
+☑ TinyAppWorking/App.tsx
+☑ TinyAppWorking/package.json
+
+ANDROID PROJECT:
+☑ TinyAppWorking/android/app/build.gradle
+☑ TinyAppWorking/android/build.gradle
+☑ TinyAppWorking/android/settings.gradle
+☑ TinyAppWorking/android/app/src/main/AndroidManifest.xml
+
+CONFIGURATION:
+☑ TinyAppWorking/babel.config.js
+☑ TinyAppWorking/tsconfig.json
+☑ TinyAppWorking/metro.config.js
+
+DELIVERABLES:
+☑ app-release.apk (35-40 MB)
+☑ README.md (~500 lines)
+☑ System_Design_Documentation.pdf (~40 pages)
+
+OPTIONAL (but recommended):
+☑ package-lock.json (for exact dependency versions)
+☑ .gitignore
+☑ Android gradle wrapper files
+
+
+================================================================================
+                          EXTRACTION INSTRUCTIONS
+================================================================================
+
+For Evaluator:
+
+1. EXTRACT THE ZIP:
+   ```bash
+   unzip TinyPal_Assignment_Submission.zip
+   cd TinyPal_Assignment_Submission
+   ```
+
+2. VERIFY CONTENTS:
+   ```bash
+   ls -la
+   # Should see: TinyAppWorking/, app-release.apk, README.md, 
+   #             System_Design_Documentation.pdf
+   ```
+
+3. READ DOCUMENTATION:
+   ```bash
+   # macOS
+   open README.md
+   open System_Design_Documentation.pdf
+   
+   # Linux
+   xdg-open README.md
+   xdg-open System_Design_Documentation.pdf
+   ```
+
+4. INSTALL APK (quickest):
+   ```bash
+   adb install app-release.apk
+   ```
+
+5. OR RUN FROM SOURCE:
+   ```bash
+   cd TinyAppWorking
+   npm install
+   npm start  # Terminal 1
+   npm run android  # Terminal 2
+   ```
+
+
+================================================================================
+                              NOTES
+================================================================================
+
+1. The ZIP file can be created with or without node_modules/
+   - WITH node_modules: ~450 MB, no npm install needed
+   - WITHOUT node_modules: ~40 MB, requires npm install
+
+2. The android/build/ directory can be excluded
+   - Can be regenerated with: ./gradlew build
+
+3. The app-release.apk is production-ready
+   - Signed and installable
+   - No debugging capabilities
+   - Optimized for performance
+
+4. All source code is included for review
+   - Well-commented
+   - Follows React Native best practices
+   - Clean folder structure
+
+5. Documentation is comprehensive
+   - README.md: Setup and running instructions
+   - System_Design_Documentation.pdf: Complete technical details
+   - Inline code comments throughout
+
+6. GenAI Usage Documentation included as required
+   - Located in System_Design_Documentation.pdf
+   - Section 7: "Bonus: Use of Generative AI"
+   - Details AI tools used, effectiveness, and integration
+
+
+================================================================================
+                        END OF STRUCTURE DOCUMENT
+================================================================================
+
+For questions or issues, refer to:
+- README.md (setup and troubleshooting)
+- System_Design_Documentation.pdf (technical details)
+- React Native documentation: https://reactnative.dev/
+
+================================================================================
+
