@@ -527,7 +527,7 @@ This project was created as part of a hiring assignment for TinyPal.
 
 ## 👤 Developer
 
-**Name**: Vankit  
+**Name**: Manya Chandra
 **Project**: TinyPal Full-Stack Founding Engineer Intern Hiring Assignment  
 **Date**: October 31, 2025
 
